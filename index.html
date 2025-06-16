@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HiShopsy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .cursor-al {
+      cursor: url('./assets/images/custom-cursor.png'), auto;
+    }
+    
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+    
+    .transition-smooth {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+<header class="w-full py-6 bg-white shadow">
+  <div class="container mx-auto px-4 flex items-center justify-between">
+    <a href="#home" class="text-2xl font-bold text-blue-600">HiShopsy</a>
+    <nav class="hidden md:flex space-x-6 items-center">
+      <a href="#" class="hover:text-blue-600 transition-colors">Home</a>
+      <a href="#" class="hover:text-blue-600 transition-colors">Shop</a>
+      <button class="flex items-center bg-gray-100 p-2 rounded hover:bg-gray-200 transition-colors">
+        <ion-icon name="bag"></ion-icon><span class="ml-1">Cart</span>
+      </button>
+    </nav>
+    <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+      <ion-icon name="menu-outline" size="large"></ion-icon>
+    </button>
+  </div>
+  
+  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-xl z-50 p-6 md:hidden">
+    <div class="flex justify-between items-center mb-8">
+      <span class="text-xl font-bold text-blue-600">HiShopsy</span>
+      <button onclick="toggleMobileMenu()">
+        <ion-icon name="close-outline" size="large"></ion-icon>
+      </button>
+    </div>
+    <nav class="space-y-4">
+      <a href="#" class="block text-lg hover:text-blue-600 transition-colors">Home</a>
+      <a href="#" class="block text-lg hover:text-blue-600 transition-colors">Shop</a>
+      <button class="w-full flex items-center justify-center bg-gray-100 p-3 rounded hover:bg-gray-200 transition-colors">
+        <ion-icon name="bag" class="mr-2"></ion-icon>Cart
+      </button>
+    </nav>
+  </div>
+</header>
+<section class="relative py-16 lg:py-24 cursor-al">
+  <div class="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
+    <div class="max-w-xl text-center lg:text-left">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Summer <br> collection</h1>
+      <a href="#" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+        Shop Now
+        <ion-icon name="arrow-forward" class="ml-2"></ion-icon>
+      </a>
+    </div>
+
+    <div class="relative w-full max-w-md lg:max-w-xl">
+      <div class="swiper mySwiper rounded-xl overflow-hidden relative z-10">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./assets/images/product-1.png" alt="Hero Banner" class="w-full h-64 sm:h-80 lg:h-96 object-cover">
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/product-2.png" alt="./assets/images/product 2" class="w-full h-64 sm:h-80 lg:h-96 object-cover">
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/product-3.png" alt="./assets/images/product 3" class="w-full h-64 sm:h-80 lg:h-96 object-cover">
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/product-4.png" alt="./assets/images/product 4" class="w-full h-64 sm:h-80 lg:h-96 object-cover">
+          </div>
+        </div>
+      </div>
+            <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-blue-100 rounded-full opacity-30 -z-10"></div>
+    </div>
+
+    <div class="absolute bottom-0 right-0 w-2/5 h-2/5 bg-blue-50 rounded-full opacity-30 pointer-events-none -z-10"></div>
+  </div>
+</section>
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-semibold text-center mb-8">Explore new arrivals</h2>
+<div class="swiper newArrivalsSwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide text-center px-2 sm:px-4">
+      <img src="./assets/images/product-1.png" alt="Urban Shadow Shirt" class="mx-auto mb-4 rounded-lg w-full h-48 sm:h-56 object-cover">
+      <h3 class="text-lg sm:text-xl font-medium mb-1">Urban Shadow Shirt</h3>
+      <p class="text-blue-600 mb-2 text-lg">$80.00</p>
+      <button class="inline-flex items-center bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+        <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+      </button>
+    </div>
+    <div class="swiper-slide text-center px-2 sm:px-4">
+      <img src="./assets/images/product-2.png" alt="Luxe Vision Specs" class="mx-auto mb-4 rounded-lg w-full h-48 sm:h-56 object-cover">
+      <h3 class="text-lg sm:text-xl font-medium mb-1">Luxe Vision Specs</h3>
+      <p class="text-blue-600 mb-2 text-lg">$90.00</p>
+      <button class="inline-flex items-center bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+        <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+      </button>
+    </div>
+    <div class="swiper-slide text-center px-2 sm:px-4">
+      <img src="./assets/images/product-3.png" alt="Midnight Drift Pants" class="mx-auto mb-4 rounded-lg w-full h-48 sm:h-56 object-cover">
+      <h3 class="text-lg sm:text-xl font-medium mb-1">Midnight Drift Pants</h3>
+      <p class="text-blue-600 mb-2 text-lg">$100.00</p>
+      <button class="inline-flex items-center bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+        <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+      </button>
+    </div>
+    <div class="swiper-slide text-center px-2 sm:px-4">
+      <img src="./assets/images/product-4.png" alt="SkyBound Cap" class="mx-auto mb-4 rounded-lg w-full h-48 sm:h-56 object-cover">
+      <h3 class="text-lg sm:text-xl font-medium mb-1">SkyBound Cap</h3>
+      <p class="text-blue-600 mb-2 text-lg">$110.00</p>
+      <button class="inline-flex items-center bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+        <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+      </button>
+    </div>
+    <div class="swiper-slide text-center px-2 sm:px-4">
+      <img src="./assets/images/product-5.png" alt="Sunset Bloom Shirt" class="mx-auto mb-4 rounded-lg w-full h-48 sm:h-56 object-cover">
+      <h3 class="text-lg sm:text-xl font-medium mb-1">Sunset Bloom Shirt</h3>
+      <p class="text-blue-600 mb-2 text-lg">$120.00</p>
+      <button class="inline-flex items-center bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+        <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+      </button>
+    </div>
+    <div class="swiper-slide text-center px-2 sm:px-4">
+      <img src="./assets/images/product-6.png" alt="Elixir Essence" class="mx-auto mb-4 rounded-lg w-full h-48 sm:h-56 object-cover">
+      <h3 class="text-lg sm:text-xl font-medium mb-1">Elixir Essence</h3>
+      <p class="text-blue-600 mb-2 text-lg">$130.00</p>
+      <button class="inline-flex items-center bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+        <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+      </button>
+    </div>
+    <div class="swiper-slide text-center px-2 sm:px-4">
+      <img src="./assets/images/product-7.png" alt="Thunder Step Shoes" class="mx-auto mb-4 rounded-lg w-full h-48 sm:h-56 object-cover">
+      <h3 class="text-lg sm:text-xl font-medium mb-1">Thunder Step Shoes</h3>
+      <p class="text-blue-600 mb-2 text-lg">$140.00</p>
+      <button class="inline-flex items-center bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+        <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+      </button>
+    </div>
+    <div class="swiper-slide text-center px-2 sm:px-4">
+      <img src="./assets/images/product-8.png" alt="Arctic Knit Beanie" class="mx-auto mb-4 rounded-lg w-full h-48 sm:h-56 object-cover">
+      <h3 class="text-lg sm:text-xl font-medium mb-1">Arctic Knit Beanie</h3>
+      <p class="text-blue-600 mb-2 text-lg">$150.00</p>
+      <button class="inline-flex items-center bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+        <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+      </button>
+    </div>
+    <div class="swiper-slide text-center px-2 sm:px-4">
+      <img src="./assets/images/product-9.png" alt="Crimson Trail Pants" class="mx-auto mb-4 rounded-lg w-full h-48 sm:h-56 object-cover">
+      <h3 class="text-lg sm:text-xl font-medium mb-1">Crimson Trail Pants</h3>
+      <p class="text-blue-600 mb-2 text-lg">$160.00</p>
+      <button class="inline-flex items-center bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+        <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+      </button>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section aria-label="feature-label" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 id="feature-label" class="text-3xl font-semibold text-center mb-8">Featured Products</h2>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <li class="text-center bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+        <img src="./assets/images/product-6.png" alt="Elixir Essence" class="w-full h-48 sm:h-56 lg:h-64 object-cover mb-4 rounded-lg">
+        <h3 class="text-lg sm:text-xl font-medium mb-1">Elixir Essence</h3>
+        <p class="text-lg text-blue-600 mb-2">$80.00</p>
+        <button class="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+          <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+        </button>
+      </li>
+      <li class="text-center bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+        <img src="./assets/images/product-3.png" alt="Midnight Drift Pants" class="w-full h-48 sm:h-56 lg:h-64 object-cover mb-4 rounded-lg">
+        <h3 class="text-lg sm:text-xl font-medium mb-1">Midnight Drift Pants</h3>
+        <p class="text-lg text-blue-600 mb-2">$90.00</p>
+        <button class="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+          <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+        </button>
+      </li>
+      <li class="text-center bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+        <img src="./assets/images/product-7.png" alt="Thunder Step Shoes" class="w-full h-48 sm:h-56 lg:h-64 object-cover mb-4 rounded-lg">
+        <h3 class="text-lg sm:text-xl font-medium mb-1">Thunder Step Shoes</h3>
+        <p class="text-lg text-blue-600 mb-2">$95.00</p>
+        <button class="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+          <ion-icon name="bag" class="mr-1"></ion-icon> Add To Cart
+        </button>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<footer class="bg-white py-12 relative">
+  <div class="container mx-auto px-4">
+    <div class="border-t pt-6 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+      <div class="space-y-2 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-0 flex flex-col sm:flex-row">
+        <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">Contact Us</a>
+        <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">Terms & Conditions</a>
+        <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">Privacy Policy</a>
+      </div>
+      <p class="text-gray-500 text-sm">Made By Pranjal Gopale</p>
+    </div>
+
+    <div class="absolute bottom-0 left-0 w-32 sm:w-64 h-32 sm:h-64 bg-blue-50 rounded-full opacity-20 pointer-events-none -translate-x-16 translate-y-16"></div>
+    <div class="absolute top-0 right-0 w-16 sm:w-32 h-16 sm:h-32 bg-gray-100 rounded-full opacity-20 pointer-events-none translate-x-8 -translate-y-8"></div>
+    <div class="absolute bottom-0 right-0 w-48 sm:w-80 h-24 sm:h-40 bg-gray-50 rounded-full opacity-20 pointer-events-none translate-x-24 translate-y-12"></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+<script>
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+  document.addEventListener('click', function(event) {
+    const menu = document.getElementById('mobileMenu');
+    const menuButton = document.querySelector('[onclick="toggleMobileMenu()"]');
+    
+    if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.remove('open');
+    }
+  });
+  new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    effect: "slide",
+  });
+  new Swiper(".newArrivalsSwiper", {
+    loop: true,
+    spaceBetween: 16,
+    slidesPerView: 1.2,
+    centeredSlides: false,
+    breakpoints: {
+      480: { 
+        slidesPerView: 1.5,
+        spaceBetween: 16 
+      },
+      640: { 
+        slidesPerView: 2,
+        spaceBetween: 20 
+      },
+      768: { 
+        slidesPerView: 2.5,
+        spaceBetween: 20 
+      },
+      1024: { 
+        slidesPerView: 3,
+        spaceBetween: 20 
+      },
+      1280: { 
+        slidesPerView: 4,
+        spaceBetween: 20 
+      },
+    },
+  });
+</script>
+
+</body>
+</html>
